@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/school_management";
 mongoose.set("strictQuery", true);
 
 export const connectDB = async () => {
@@ -8,7 +7,8 @@ export const connectDB = async () => {
     const mongoose = require('mongoose');
 
     // Connect to MongoDB
-    mongoose.connect('mongodb://localhost:27017/chat-app', { useNewUrlParser: true })
+    const URI = "mongodb+srv://vino1:test12345@cluster0.wnpt6mw.mongodb.net/test";
+    mongoose.connect(`${URI}`);
     // Listen for the 'open' event
     mongoose.connection.on('open', () => {
       console.log('Connected to MongoDB');
